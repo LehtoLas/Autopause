@@ -189,7 +189,7 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
               ["Luokka",   `${vehicle.code} · ${vehicle.name}`],
               ["Vuosi",    vehicle.year  || "–"],
               ["Väri",     vehicle.color || "–"],
-              ["Vakuutus", "Voimassa"],
+              ["Seuraava katsastusaikaväli", "16.9.2025-21.9.2026"], 
             ].map(([label, value]) => (
               <View key={label} style={[as.infoCell, { backgroundColor: t.rowBg }]}>
                 <Text style={[as.icLabel, { color: t.textMuted }]}>{label}</Text>
@@ -200,11 +200,11 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
 
           {isOff ? (
             <TouchableOpacity style={as.btnSuccess} activeOpacity={0.85} onPress={() => handleAction("restore")}>
-              <Text style={as.btnSuccessText}>🟢 Ota liikennekäyttöön</Text>
+              <Text style={as.btnSuccessText}>🟢 Ota liikennekäyttöön (Maksuton)</Text>
             </TouchableOpacity>
           ) : (
             <TouchableOpacity style={as.btnDanger} activeOpacity={0.85} onPress={() => handleAction("remove")}>
-              <Text style={as.btnDangerText}>🔴 Poista liikennekäytöstä</Text>
+              <Text style={as.btnDangerText}>🔴 Poista liikennekäytöstä (7€)</Text>
             </TouchableOpacity>
           )}
         </View>
