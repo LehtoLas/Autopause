@@ -111,27 +111,8 @@ Käyttäjä valitsee pankin ja kirjautuu sisään. Tunnistautumisen jälkeen sov
 
 ---
 
-## 🔮 Jatkokehitysideoita
-
-- [ ] Oikea Suomi.fi OpenID Connect -integraatio
-- [ ] Traficom-rajapinnan maksettu API-yhteys rekisterikilven hakuun
-- [ ] Zustand-tilanhallinta `useState`-kutsujen sijaan
-- [ ] TypeScript-tyypit kaikille tietorakenteille
-- [ ] Palvelukerros (services/) API-kutsujen erottamiseksi UI:sta
-- [ ] Ajoneuvon poisto sovelluksesta
-- [ ] Push-ilmoitukset katsastuspäivistä ja vakuutuksen umpeutumisesta
-
----
-
 ## 📄 Lisenssi
 
 Tämä projekti on kehitetty demotarkoituksiin. Kaikki oikeudet pidätetään.
 
 ---
-
-## 📬 Yhteydenotto
-
-Kiinnostuitko yhteistyöstä tai API-integraatiosta?
-
-- Traficom avoin data: [tieto.traficom.fi](https://tieto.traficom.fi/fi/avoin-data)
-- Suomi.fi kehittäjät: [palveluhallinta.suomi.fi](https://palveluhallinta.suomi.fi)
