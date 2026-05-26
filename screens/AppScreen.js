@@ -162,7 +162,7 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
             <TouchableOpacity style ={[as.editBtn, {backgroundColor:"rgba(226,75,74,0.15)",borderColor: "rgba(226,75,74,0.3)"}]}
               activeOpacity={0.7}
               onPress={() => setModal("deletevehicle")}>
-                <Text style={{fontSize:14}}>🗑️</Text>
+                <Text style={{fontSize:12}}>🗑️</Text>
               </TouchableOpacity>
             )}
           </View>
