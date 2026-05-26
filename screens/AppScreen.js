@@ -54,12 +54,6 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
   };
 
   const executeAction = () => {
-    await AsyncStorage.removeItem("vehicles_" + userHetu);
-    await AsyncStorage.removeItem("log_" + userHetu);
-    setVehicles(user.vehicles);
-    setSelectedIndex(0);
-    setLog([]);
-    setModal(null);
     setModal("processing");
     const action = pendingAction;
     setTimeout(() => {
@@ -73,6 +67,15 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
       setModal("done");
       setTimeout(() => setModal(null), 1400);
     }, 2000);
+  };
+  
+  const handleDevReset = async() => {    
+    await AsyncStorage.removeItem("vehicles_" + userHetu);
+    await AsyncStorage.removeItem("log_" + userHetu);
+    setVehicles(user.vehicles);
+    setSelectedIndex(0);
+    setLog([]);
+    setModal(null);
   };
 
   const confirmTitle = pendingAction?.type === "remove" ? "Poista liikennekäytöstä" : "Ota liikennekäyttöön";
