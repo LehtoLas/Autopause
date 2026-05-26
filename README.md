@@ -98,7 +98,7 @@ Sovellus käyttää simuloitua Suomi.fi-tunnistautumista. Valitse mikä tahansa 
 ### Suomi.fi-tunnistautuminen
 Käyttäjä valitsee pankin ja kirjautuu sisään. Tunnistautumisen jälkeen sovellus hakee käyttäjän ajoneuvot Traficomin rekisteristä.
 
-### Päänakyma
+### Päänäkymä
 - Ajoneuvon rekisterinumero, merkki, malli, vuosi ja väri
 - Liikennekäyttöstatus reaaliajassa
 - Välilehdet usean ajoneuvon välillä vaihtamiseen
