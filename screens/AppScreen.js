@@ -276,7 +276,7 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
             setModal(null);
           }}
           confirmLabel="Poista"
-          confirmColor="e74c3c"
+          confirmColor="#e74c3c"
           />
       </ThemedModal>
       
