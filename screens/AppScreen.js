@@ -69,14 +69,14 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
     }, 2000);
   };
 
-  const handleDevReset = async() => {    
-    await AsyncStorage.removeItem("vehicles_" + userHetu);
-    await AsyncStorage.removeItem("log_" + userHetu);
-    setVehicles(user.vehicles);
-    setSelectedIndex(0);
-    setLog([]);
-    setModal(null);
-  };
+ const handleDevReset = async () => {
+  await AsyncStorage.removeItem("vehicles_" + user.hetu);
+  await AsyncStorage.removeItem("log_" + user.hetu);
+  setVehicles(user.vehicles);
+  setSelectedIndex(0);
+  setLog([]);
+  setModal(null);
+};
 
   const confirmTitle = pendingAction?.type === "remove" ? "Poista liikennekäytöstä" : "Ota liikennekäyttöön";
   const confirmDesc  = pendingAction?.type === "remove"
