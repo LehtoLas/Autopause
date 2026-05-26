@@ -39,6 +39,7 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
   }, [log]);
 
   const vehicle = vehicles[selectedIndex] ?? vehicles[0];
+    if (!vehicle) return null;
   const isOff   = vehicle.status === "OFF";
 
   const updateVehicle = (index, changes) =>
@@ -140,6 +141,13 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
               onPress={() => { setEditTarget(selectedIndex); setModal("edit"); }}>
               <Text style={{ fontSize: 14 }}>✏️</Text>
             </TouchableOpacity>
+            {vehicles.length > 1 &&(
+            <TouchableOpacity style ={[as.editBtn, {backgroundColor:"rgba(226,75,74,0.15)",borderColor: "rgba(226,75,74,0.3)"}]}
+              activeOpacity={0.7}
+              onPress={() => setmodal("deletevehicle")}>
+                <Text style={{fontSize:14}}>🗑️</Text>
+              </TouchableOpacity>
+            )}
           </View>
 
           <View style={[as.divider, { backgroundColor: t.divider }]} />
@@ -234,6 +242,27 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
         <Text style={[as.modalDesc, { color: t.modalDesc }]}>Odota hetki</Text>
       </ThemedModal>
 
+      {/* Delete vehicle modal */}
+      <ThemedModal visible={modal === "deletevehicle"}>
+        <Text style={as.modalIcon}>🗑️</Text>
+        <Text style={[as.modalTitle, {color:t.text}]}>Poista ajoneuvo</Text>
+        <Text style={as.modalDesc, {color: t.modalDesc}}>
+          Poistetaanko ajoneuvo {vehicle.plate} tiedoista?
+        </Text>
+        <ModalActions
+          onCancel={() => setModal(null)}
+          onConfirm={() => {
+            const updated = vehicles.filter((_, i) => i !==selectedIndex);
+            setVehicles(updated);
+            setSelectedIndex(0);
+            addLog(vehicle.plate, "Poistettu sovelluksesta","🗑️");
+            setModal(null);
+          }}
+          confirmLabel="Poista"
+          confirmColor="e74c3c"
+          />
+      </ThemedModal>
+      
       {/* Done modal */}
       <ThemedModal visible={modal === "done"}>
         <Text style={as.modalIcon}>{doneIcon}</Text>
