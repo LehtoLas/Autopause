@@ -68,7 +68,7 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
       setTimeout(() => setModal(null), 1400);
     }, 2000);
   };
-  
+
   const handleDevReset = async() => {    
     await AsyncStorage.removeItem("vehicles_" + userHetu);
     await AsyncStorage.removeItem("log_" + userHetu);
