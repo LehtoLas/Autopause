@@ -1,13 +1,13 @@
 export const MOCK_USERS = {
   "123456": {
-    name: "Matti Meikäläinen", hetu: "010190-123A",
+    name: "Matti Meikäläinen", hetu: "",
     vehicles: [
       { plate: "ABC-123", code: "M1",  name: "Henkilöauto",    make: "Toyota",     model: "Corolla",     year: "2019", color: "Valkoinen", status: "ON" },
       { plate: "XYZ-789", code: "N1",  name: "Pakettiauto",    make: "Volkswagen", model: "Transporter", year: "2021", color: "Harmaa",    status: "ON" },
     ],
   },
   "654321": {
-    name: "Liisa Virtanen", hetu: "150585-456B",
+    name: "Liisa Virtanen", hetu: "",
     vehicles: [
       { plate: "DEF-456", code: "M1", name: "Henkilöauto", make: "Volvo", model: "V60", year: "2022", color: "Sininen", status: "ON" },
     ],
