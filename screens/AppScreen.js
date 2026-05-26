@@ -54,6 +54,12 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
   };
 
   const executeAction = () => {
+    await AsyncStorage.removeItem("vehicles_" + userHetu);
+    await AsyncStorage.removeItem("log_" + userHetu);
+    setVehicles(user.vehicles);
+    setSelectedIndex(0);
+    setLog([]);
+    setModal(null);
     setModal("processing");
     const action = pendingAction;
     setTimeout(() => {
@@ -102,12 +108,20 @@ export function AppScreen({ user, onLogout, isDark, onToggleTheme }) {
             <Text style={[as.logoutText, { color: t.btnSecText }]}>Kirjaudu ulos</Text>
           </TouchableOpacity>
           {__DEV__ && (
+          <>  
             <TouchableOpacity
               style={[as.logoutBtn, { backgroundColor: "#e74c3c", borderColor: "#c0392b", marginLeft: 4 }]}
               onPress={() => { throw new Error("Testi virhe"); }}
             >
               <Text style={{ color: "#fff", fontSize: 11 }}>💥</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+              style={[as.logoutBtn,{backgroundColor: "#1a6b9a", borderColor: "#1a5c85", marginLeft:4}]}
+              onPress={handleDevReset}
+              >
+                <Text style={{color: "#fff", fontSize:11}}>↺</Text>
+              </TouchableOpacity>
+            </>  
           )}
         </View>
 
